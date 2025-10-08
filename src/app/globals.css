@@ -1,26 +1,109 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ffffff;
+  --silver-400: #c0c0c0;
+  --sidebar-width: 0px; /* Default for mobile */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+/* Desktop sidebar width */
+@media (min-width: 768px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --sidebar-width: 4rem; /* Default collapsed width on desktop */
   }
 }
 
+/* Color and font theme variables */
+.theme-vars {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-josefin);
+  --font-serif: var(--font-playfair);
+  --color-silver-400: #c0c0c0;
+}
+
 body {
-  background: var(--background);
+  background: #000000;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-josefin), 'Josefin Sans', sans-serif;
+}
+
+/* Custom Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-from-left {
+  from {
+    transform: translateX(-1.25rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-from-bottom {
+  from {
+    transform: translateY(0.75rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Navigation item animations */
+.nav-item-0 {
+  animation: slide-in-from-left 500ms ease-out 0ms both;
+}
+
+.nav-item-1 {
+  animation: slide-in-from-left 500ms ease-out 75ms both;
+}
+
+.nav-item-2 {
+  animation: slide-in-from-left 500ms ease-out 150ms both;
+}
+
+.nav-item-3 {
+  animation: slide-in-from-left 500ms ease-out 225ms both;
+}
+
+.nav-item-4 {
+  animation: slide-in-from-left 500ms ease-out 300ms both;
+}
+
+.check-eligibility-card {
+  animation: slide-in-from-bottom 700ms ease-out 400ms both;
+}
+
+.elevate-section {
+  animation: fade-in 1000ms ease-out 500ms both;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

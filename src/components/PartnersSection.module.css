@@ -1,0 +1,67 @@
+.partnersSection {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  position: relative; /* Ensure proper positioning context */
+}
+
+.partnersTrack {
+  position: absolute; /* Ensure the track stays within the container */
+  left: 0;
+  top: 0; /* Align to the top of the container */
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  width: 200%; /* Ensure the track spans the container */
+  animation: partners-scroll 28s linear infinite;
+  will-change: transform;
+  visibility: visible; /* Ensure the track is visible */
+}
+
+.partnersTrack:hover {
+  animation-play-state: paused;
+}
+
+/* responsive tweaks: faster on small screens and less gap */
+@media (max-width: 640px) {
+  .partnersTrack {
+    gap: 1rem;
+    animation-duration: 8s; /* faster on phones */
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .partnersTrack {
+    gap: 1.5rem;
+    animation-duration: 18s; /* medium speed on tablets */
+  }
+}
+
+@keyframes partners-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* make sure track can't cause page overflow */
+.partnersTrack > * {
+  flex: 0 0 auto; /* Prevent items from shrinking or growing */
+}
+
+/* logo item sizing — keep images smaller on mobile to reduce layout work */
+.logoItem { /* applied to each wrapper */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+}
+
+@media (min-width: 640px) {
+  .logoItem { width: 120px; }
+}
+
+@media (min-width: 1024px) {
+  .logoItem { width: 160px; }
+}
+
+/* respect user motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .partnersTrack { animation: none; }
+}
