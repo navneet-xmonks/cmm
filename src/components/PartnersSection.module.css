@@ -8,7 +8,7 @@
   left: 0;
   top: 0; /* Align to the top of the container */
   display: flex;
-  gap: 2.5rem;
+  gap: 0rem;
   align-items: center;
   width: 200%; /* Ensure the track spans the container */
   animation: partners-scroll 28s linear infinite;
@@ -16,9 +16,6 @@
   visibility: visible; /* Ensure the track is visible */
 }
 
-.partnersTrack:hover {
-  animation-play-state: paused;
-}
 
 /* responsive tweaks: faster on small screens and less gap */
 @media (max-width: 640px) {
@@ -50,15 +47,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
+  width: 180px;
 }
 
 @media (min-width: 640px) {
-  .logoItem { width: 120px; }
+  .logoItem { width: 180px; }
 }
 
 @media (min-width: 1024px) {
-  .logoItem { width: 160px; }
+  .logoItem { width: 180px; }
 }
 
 /* respect user motion preference */

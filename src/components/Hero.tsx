@@ -23,12 +23,12 @@ const Hero = () => {
           {/* Column 1: Heading and Subheading - RESPONSIVE */}
           <div className="order-1 lg:order-1">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-[family-name:var(--font-josefin)] font-light text-white mb-4 sm:mb-6 md:mb-8 leading-tight">
-              Become an<br />
-              AI-first leader
+              10X <br />
+              Your Business
             </h1>
             
             <p className="text-lg sm:text-xl md:text-2xl font-normal text-gray-300 font-[family-name:var(--font-josefin)] max-w-2xl">
-              Find people, content & credits to integrate AI into your work.
+              with the Top 1% Successful Coaches in the world
             </p>
           </div>
 

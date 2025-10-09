@@ -43,7 +43,7 @@ const PartnersSection = () => {
                     alt={`Partner ${i + 1}`}
                     width={220}
                     height={48}
-                    sizes="(max-width: 640px) 64px, (max-width: 1024px) 120px, 160px"
+                    sizes="(max-width: 640px) 180px, (max-width: 1024px) 120px, 160px"
                     className="object-contain filter grayscale opacity-90 transition-all duration-300 hover:grayscale-0 hover:opacity-100 hover:scale-105"
                     loading="lazy"
                   />

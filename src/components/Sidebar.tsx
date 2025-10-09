@@ -104,40 +104,40 @@ const Sidebar = () => {
             const Icon = isActive ? item.activeIcon : item.icon;
             
             return (
-              <Link
+                <Link
                 key={item.name}
                 href={item.href}
-                className={`group relative flex items-center gap-4 px-4 py-4 rounded-xl transition-all duration-300 ease-out nav-item-${index}
+                className={`group relative flex items-center gap-4 px-4 py-4 rounded-4xl transition-all duration-300 ease-out nav-item-${index}
                   ${isOpen ? 'justify-start' : 'justify-center'}
                   ${isActive 
-                    ? 'border border-gray-400/30 shadow-[0_0_15px_rgba(255,255,255,0.1)]' 
-                    : 'border border-transparent hover:border-gray-600/30'
+                  ? 'border border-white shadow-[0_0_15px_rgba(255,255,255,0.1)]' 
+                  : 'border border-transparent hover:border-white'
                   }`}
-              >
+                >
                 {/* Icon with GLOWING effect */}
                 <div className="transition-transform duration-300 ease-out group-hover:scale-110">
                   {isActive ? (
-                    <Icon className="text-lg transition-all duration-300 text-white filter drop-shadow-[0_0_20px_rgba(255,255,255,0.9)] drop-shadow-[0_0_30px_rgba(255,255,255,0.6)] brightness-125" />
+                  <Icon className="text-lg transition-all duration-300 text-white filter drop-shadow-[0_0_20px_rgba(255,255,255,0.9)] drop-shadow-[0_0_30px_rgba(255,255,255,0.6)] brightness-125" />
                   ) : (
-                    <Icon className="text-lg transition-all duration-300 text-gray-400 group-hover:text-white group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.7)] group-hover:brightness-110" />
+                  <Icon className="text-lg transition-all duration-300 text-gray-400 group-hover:text-white group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.7)] group-hover:brightness-110" />
                   )}
                 </div>
                 
                 {/* Text with GLOWING effect when active - only show if open */}
                 {isOpen && (
                   <>
-                    {isActive ? (
-                      <span className="font-normal text-base transition-all duration-300 text-white filter drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] drop-shadow-[0_0_30px_rgba(255,255,255,0.5)] animate-in fade-in duration-200">
-                        {item.name}
-                      </span>
-                    ) : (
-                      <span className="font-normal text-base transition-all duration-300 text-gray-400 group-hover:text-white group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]">
-                        {item.name}
-                      </span>
-                    )}
+                  {isActive ? (
+                    <span className="font-normal text-base transition-all duration-300 text-white filter drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] drop-shadow-[0_0_30px_rgba(255,255,255,0.5)] animate-in fade-in duration-200">
+                    {item.name}
+                    </span>
+                  ) : (
+                    <span className="font-normal text-base transition-all duration-300 text-gray-400 group-hover:text-white group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]">
+                    {item.name}
+                    </span>
+                  )}
                   </>
                 )}
-              </Link>
+                </Link>
             );
           })}
         </nav>
